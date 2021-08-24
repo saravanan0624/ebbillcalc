@@ -1,37 +1,24 @@
-<html>
-<head>TNEB Domestic Bill Calc</head>
-
-
+<html>  
+<head>
+    <title>eb bill calculate</title>
+</head>
+<link rel="stylesheet" href="style.css">
 <body>
-    <form>
-        <table>
-            
-            <tr>
-                <td>
-                    consumed units  :
-                </td>
-                <td>
-                    <input type="text" name="" id="units"> 
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-
-                </td>
-            <td>
-                <input type="button" value="calculate" onclick="onButtonClicked()">
-            </td>
-            </tr>
-
-
-            <tr>
-                <td>Bill  Amount:</td>
-                <td><p id="demo"></p> </td>
-            </tr>
-
-        </table>
-    </form>
+    <div class="ebbill">
+                <div class="text">  
+                    <label>consumed units</label>   
+                    <input type="text" name="" id="units">
+                </div>
+                <br/>
+                     <div class="btn" style="padding-left: 60%;">
+                     <input class="buttoncolor"type="button" value="calculate" onclick="onButtonClicked()">
+                     </div>
+                     <br/>
+                <div class="text">                   
+                    <label class="demo">Bill Amount :</label>             
+                    <label><p id="demo"></p></label>
+                </div>           
+    </div>
 
     <script>
         function onButtonClicked()
@@ -40,56 +27,29 @@
             var units= document.getElementById("units").value;
             if (units<=100)
             {
-                var a= units*0;
-                document.getElementById("demo").innerHTML=a;
-                return units*0;
+                var amount=0;
             }
             else if (units<=200)
             {
-                var b= (100*0)+(units-100)*1.5;
-                document.getElementById("demo").innerHTML=b;
-              
-                return (100*0)+(units-100)*1.5;
+                var amount= (100*0)+(units-100)*1.5;
             }
             else if (units<=500)
             {
-                var c= (100*0)+(100*2)+(300*3)+(units-300)*3;
-                document.getElementById("demo").innerHTML=c;
-
-                return (100*0)+(100*2)+(300*3)+(units-300)*3;
+                var amount= (100*0)+(100*2)+(300*3)+(units-500)*3;
             }
             else if (units>500)
             {
-                var d=(100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
-                document.getElementById("demo").innerHTML=d;
-                return (100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
+                var amount=(100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
             }
             else
             {
                 document.getElementById("demo").innerHTML=0;
-                return 0;
             }
+            document.getElementById("demo").innerHTML=amount;
         }else{
             alert("Please Enter Value");
         }
-        }
-        // var units='';
-        // document.write(units);       
-        // document.getElementById('demo').innerHTML ='demo';
-        // var units = document.getElementById('units').value;
-        // {
-        //   if(units =='')
-        // {
-        //   alert('Please enter value for units');
-        //   return 0;
-        // }
-
-        // }
-        
-            //check if units exists
-
-            //calculate
-
+    }
     </script>
     
 
