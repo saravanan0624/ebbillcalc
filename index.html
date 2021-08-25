@@ -15,43 +15,42 @@
                      </div>
                      <br/>
                 <div class="text">                   
-                    <label class="demo">Bill Amount :</label>             
+                    <label id="billamountcaption"></label>             
                     <label><p id="demo"></p></label>
                 </div>           
     </div>
-
     <script>
         function onButtonClicked()
         {
             if(document.getElementById('units').value!=""){
             var units= document.getElementById("units").value;
+            var amount = 0;
             if (units<=100)
             {
-                var amount=0;
+                amount=0;
             }
             else if (units<=200)
             {
-                var amount= (100*0)+(units-100)*1.5;
+                 amount= (100*0)+(units-100)*1.5;
             }
             else if (units<=500)
             {
-                var amount= (100*0)+(100*2)+(300*3)+(units-500)*3;
+                 amount= (100*0)+(100*2)+(300*3)+(units-500)*3;
             }
             else if (units>500)
             {
-                var amount=(100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
+                 amount=(100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
             }
             else
             {
                 document.getElementById("demo").innerHTML=0;
             }
+            document.getElementById("billamountcaption").innerHTML = 'Bill Amount:';
             document.getElementById("demo").innerHTML=amount;
         }else{
             alert("Please Enter Value");
         }
     }
     </script>
-    
-
 </body>
 </html>
